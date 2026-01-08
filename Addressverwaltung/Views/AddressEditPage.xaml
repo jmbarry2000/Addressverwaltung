@@ -1,0 +1,31 @@
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Adressverwaltung.Views.AddressEditPage"
+    Title="Adresse">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="10">
+
+            <Entry Placeholder="Vorname" Text="{Binding FirstName}" />
+            <Entry Placeholder="Nachname" Text="{Binding LastName}" />
+            <Entry Placeholder="Firma" Text="{Binding Company}" />
+            <Entry Placeholder="Strasse" Text="{Binding Street}" />
+            <Entry Placeholder="PLZ" Text="{Binding ZipCode}" />
+            <Entry Placeholder="Ort" Text="{Binding City}" />
+            <Entry Placeholder="Telefon" Text="{Binding Phone}" />
+
+            <Image Source="{Binding PhotoPath}" HeightRequest="150"/>
+
+            <Button Text="Foto aufnehmen"
+                    Command="{Binding TakePhotoCommand}" />
+
+            <Button Text="In Google Maps anzeigen"
+                    Command="{Binding OpenMapsCommand}" />
+
+            <Button Text="Speichern"
+                    Command="{Binding SaveCommand}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
