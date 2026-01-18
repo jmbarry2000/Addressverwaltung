@@ -5,7 +5,7 @@ Eine einfache lokale Adressverwaltung mit:
 ✔ Adressen anlegen, bearbeiten, löschen  
 ✔ Suche nach Name, Ort, PLZ, Firma, Telefon  
 ✔ Lokale SQLite-Datenbank  
-(✔) Fotoaufnahme pro Kontakt  
+✔ Fotoaufnahme pro Kontakt  
 ✔ Öffnen der Adresse in Google Maps
 
 ## Technologie
