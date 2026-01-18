@@ -5,7 +5,7 @@ namespace Adressverwaltung.Data;
 
 public class Database
 {
-    private readonly SQLiteAsyncConnection _database;
+    readonly SQLiteAsyncConnection _database;
 
     public Database(string dbPath)
     {
@@ -17,7 +17,7 @@ public class Database
         => _database.Table<Address>().ToListAsync();
 
     public Task<Address> GetAddressAsync(int id)
-        => _database.Table<Address>().FirstOrDefaultAsync(a => a.Id == id);
+        => _database.Table<Address>().Where(a => a.Id == id).FirstOrDefaultAsync();
 
     public Task<int> SaveAddressAsync(Address address)
     {
@@ -26,6 +26,9 @@ public class Database
         else
             return _database.InsertAsync(address);
     }
+
+    public Task<int> UpdateAddressAsync(Address address)
+        => _database.UpdateAsync(address);
 
     public Task<int> DeleteAddressAsync(Address address)
         => _database.DeleteAsync(address);

@@ -1,0 +1,25 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Adressverwaltung.ViewModels"
+             x:Class="Adressverwaltung.Views.AddressEditPicturePage"
+             Title="Adresse bearbeiten">
+
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Entry Placeholder="Vorname" Text="{Binding EditedAddress.FirstName}" />
+            <Entry Placeholder="Nachname" Text="{Binding EditedAddress.LastName}" />
+            <Entry Placeholder="Firma" Text="{Binding EditedAddress.Company}" />
+            <Entry Placeholder="Telefon" Text="{Binding EditedAddress.PhoneNumber}" />
+            <Entry Placeholder="PLZ" Text="{Binding EditedAddress.ZipCode}" />
+            <Entry Placeholder="Ort" Text="{Binding EditedAddress.City}" />
+
+            <Button Text="Foto aufnehmen"
+                    Command="{Binding TakePhotoCommand}" />
+
+            <Image Source="{Binding PhotoPath}" HeightRequest="200" />
+
+            <Button Text="Speichern"
+                    Command="{Binding SaveCommand}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
